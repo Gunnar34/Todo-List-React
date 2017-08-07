@@ -36,11 +36,15 @@ export class App2 extends React.Component {
 					<h3 className="row">Todo</h3> {
 						this.state.list.map((item, i) =>
 						<div style={Object.assign({}, styles.listItem, item.done && styles.none)} key={"item_" + i}>
-							{ !item.done && <li className="col-sm-11 col-sm-push-1 text-left">
-								<span> {item.name} </span>
-								<button className="btn" onClick={() => this.complete(i)}> Complete </button>
-								<button className="btn" onClick={() => this.remove(i)}> X </button>
-							</li> }
+							{ !item.done && <div className="row">
+                <div className="col-sm-5 col-sm-push-1 text-left">
+								  <span> • {item.name} </span>
+                </div>
+                <div className="col-sm-6 text-right">
+  								<button className="btn" onClick={() => this.complete(i)}> Complete </button>
+  								<button className="btn" onClick={() => this.remove(i)}> X </button>
+                </div>
+							</div> }
 						</div>
 					)
 				}
@@ -49,11 +53,15 @@ export class App2 extends React.Component {
 				<div className="col-sm-6 text-center">
 	        <h3>Done</h3> {
 						this.state.list.map((item, i) =>
-						<div style={Object.assign({}, styles.listItem, !item.done && styles.none)} key={"item_" + i}>
-							{ item.done && <li className="col-sm-11 col-sm-push-1 text-left">
-								<span> {item.name} </span>
-								<button className="btn" onClick={() => this.remove(i)}> X </button>
-							</li> }
+						<div className="row" style={Object.assign({}, styles.listItem, !item.done && styles.none)} key={"item_" + i}>
+							{ item.done && <div className="row">
+                <div className="col-sm-5 col-sm-push-1 text-left">
+  								<span> • {item.name} </span>
+                </div>
+                <div className="col-sm-6 text-right">
+  								<button className="btn" onClick={() => this.remove(i)}> X </button>
+                </div>
+							</div> }
 						</div>
 					)
 				}
