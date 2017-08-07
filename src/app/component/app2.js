@@ -41,8 +41,8 @@ export class App2 extends React.Component {
 								  <span> • {item.name} </span>
                 </div>
                 <div className="col-sm-6 text-right">
-  								<button className="btn" onClick={() => this.complete(i)}> Complete </button>
-  								<button className="btn" onClick={() => this.remove(i)}> X </button>
+  								<button style={Object.assign({}, styles.complete)} className="btn" onClick={() => this.complete(i)}> Complete </button>
+  								<button style={Object.assign({}, styles.remove)} className="btn" onClick={() => this.remove(i)}> X </button>
                 </div>
 							</div> }
 						</div>
@@ -59,7 +59,7 @@ export class App2 extends React.Component {
   								<span> • {item.name} </span>
                 </div>
                 <div className="col-sm-6 text-right">
-  								<button className="btn" onClick={() => this.remove(i)}> X </button>
+  								<button style={Object.assign({}, styles.remove)} className="btn" onClick={() => this.remove(i)}> X </button>
                 </div>
 							</div> }
 						</div>

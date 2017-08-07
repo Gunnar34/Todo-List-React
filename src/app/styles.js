@@ -28,5 +28,13 @@ export const styles = {
   },
   none: {
     display: 'none',
+  },
+  complete: {
+    backgroundColor: '#42a5f5',
+    color: '#FFF',
+  },
+  remove: {
+    backgroundColor: '#f44336',
+    color: '#FFF',
   }
 }
